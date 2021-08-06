@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/firstTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:layout_marginRight="10dp"
+            android:textSize="30sp">
+        </TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+            <TextView
+                android:id="@+id/text_dosage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How many times to be taken a day: 0">
+            </TextView>
+            <TextView
+                android:id="@+id/text_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Begin Notifying by: 00:00">
+            </TextView>
+            <TextView
+                android:id="@+id/text_dosagestat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doses taken today: n/n">
+            </TextView>
+
+            </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
