@@ -30,12 +30,11 @@ class MainActivity : AppCompatActivity() {
 
         fbtn_add.setOnClickListener {
             setAlertDialogueLogin()
-
         }
 
     }
 
-    fun setAlertDialogueLogin() {
+    private fun setAlertDialogueLogin() {
 
         var i = 0
 
@@ -71,9 +70,6 @@ class MainActivity : AppCompatActivity() {
     private fun createList(){
         val myListAdapter = MyListAdapter(this, medNames, medDosage, medBegin, medDosageStat)
         listView.adapter = myListAdapter
-
-
-
         listView.setOnItemClickListener() { adapterView, view, position, id ->
             val itemAtPos = adapterView.getItemAtPosition(position)
             val itemIdAtPos = adapterView.getItemIdAtPosition(position)
