@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 
-class MyListAdapter (private val context: Activity, private val medNames: Array<String>, private val medDosage: Array<String>, private val medBegin: Array<String>, private val medDosageStat: Array<String>)
+class MyListAdapter (private val context: Activity, private val medNames: Array<String?>, private val medDosage: Array<String?>, private val medBegin: Array<String?>, private val medDosageStat: Array<String?>)
     :ArrayAdapter<String>(context, R.layout.activity_listview, medNames) {
 
     override fun getView(position: Int, View: View?, parent: ViewGroup): View {
@@ -19,9 +19,9 @@ class MyListAdapter (private val context: Activity, private val medNames: Array<
         val meddosagestatlist = rowView.findViewById<TextView>(R.id.text_dosagestat)
 
         mednameslist.text = medNames[position]
-        meddosagelist.text = "How many times to be taken a day: ${medDosage[position]}"
-        medbeginlist.text = "Begin Notifying by: ${medBegin[position]}"
-        meddosagestatlist.text = "Doses taken today: ${medDosageStat[position]}/${medDosage[position]}"
+        meddosagelist.text = medDosage[position]
+        medbeginlist.text = medBegin[position]
+        meddosagestatlist.text = "${medDosageStat[position]} / ${medDosage[position]}"
 
 
         return rowView
