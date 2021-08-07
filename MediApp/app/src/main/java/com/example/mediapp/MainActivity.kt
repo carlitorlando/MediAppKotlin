@@ -16,12 +16,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var medNames = arrayOf<String>("")
-    var medDosage = arrayOf<String>("")
-    var medDuration = arrayOf<String>("")
-    var medInterval = arrayOf<String>("")
-    var medBegin = arrayOf<String>("")
-    var medDosageStat = arrayOf<String>("")
+    /*var medNames = arrayOf<String>("","")
+    var medDosage = arrayOf<String>("","")
+    var medDuration = arrayOf<String>("","")
+    var medInterval = arrayOf<String>("","")
+    var medBegin = arrayOf<String>("","")
+    var medDosageStat = arrayOf<String>("","")*/
+
+    var medNames : Array<String?> = arrayOfNulls<String>(10)
+    var medDosage : Array<String?> = arrayOfNulls<String>(10)
+    var medDuration : Array<String?> = arrayOfNulls<String>(10)
+    var medInterval : Array<String?> = arrayOfNulls<String>(10)
+    var medBegin : Array<String?> = arrayOfNulls<String>(10)
+    var medDosageStat : Array<String?> = arrayOfNulls<String>(10)
+    var i = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     fun setAlertDialogueLogin() {
 
-        var i = 0
+
 
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.activity_add, null)
         val mBuilder = android.app.AlertDialog.Builder(this)
@@ -59,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             i++
             Toast.makeText(this, "Added to list", Toast.LENGTH_SHORT).show()
             createList()
+
             mAlertDialog.dismiss()
         }
 
@@ -68,10 +77,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun createList(){
+    fun createList(){
         val myListAdapter = MyListAdapter(this, medNames, medDosage, medBegin, medDosageStat)
         listView.adapter = myListAdapter
-
 
 
         listView.setOnItemClickListener() { adapterView, view, position, id ->
